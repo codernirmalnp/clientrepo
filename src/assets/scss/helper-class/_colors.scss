@@ -1,0 +1,310 @@
+/* --- Background --- */
+.background {
+    &-size-contain {
+        background-size: contain;
+    }
+
+    &-no-repeat {
+        background-repeat: no-repeat;
+    }
+
+    &-center {
+        background-position: center;
+    }
+
+    &-color {
+        &-primary {
+            background-color: $primaryColor !important;
+
+            &-light {
+                background-color: lighten($color: $primaryColor, $amount: 35) !important;
+            }
+        }
+
+        &-secondary {
+            background-color: $secondaryColor !important;
+        }
+
+        &-danger {
+            background-color: $errorColor !important;
+        }
+
+        &-muted {
+            background-color: lighten($color: $grey, $amount:2) !important;
+        }
+
+        &-white {
+            background-color: #ffffff !important;
+        }
+
+        &-grey {
+            background-color: $grey !important;
+
+            &-light {
+                background-color: #EFEFEF !important;
+            }
+        }
+
+        &-input {
+            background-color: $inputBg !important;
+        }
+
+        &-toolbarBg {
+            background-color: $toolbarSearchBackground !important;
+        }
+
+        &-sideNavBg {
+            background-color: $sideNavBackground !important;
+        }
+
+        &-transparent {
+            background-color: transparent !important;
+        }
+    }
+}
+
+.status {
+    position: relative;
+    padding-left: 20px;
+
+    &:before {
+        width: 11px;
+        height: 11px;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        border-radius: 50%;
+    }
+
+    &.success {
+        &:before {
+            background-color: $successColor;
+        }
+    }
+
+    &.warn {
+        &:before {
+            background-color: $warningColor;
+        }
+    }
+
+    &.danger {
+        &:before {
+            background-color: $errorColor;
+        }
+    }
+}
+
+.status-bg {
+    min-width: 8.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 16px;
+    border-radius: 30px;
+    color: #172B4D;
+
+    &.success {
+        background-color: rgba($color: $primaryColor, $alpha: 0.25);
+        color: darken($color: $primaryColor, $amount: 20);
+    }
+
+    &.warn {
+        background-color: rgba($color: $warningColor, $alpha: 0.25);
+        color: darken($color:$warningColor, $amount: 20);
+    }
+
+    &.danger {
+        background-color: rgba($color: $errorColor, $alpha: 0.25);
+        color: darken($color: $errorColor, $amount: 20);
+    }
+
+    &.disabled {
+        background-color: #E3E3E3;
+        color: #8D8D8D;
+    }
+
+    &.compact {
+        min-width: initial;
+        padding: 4px 8px;
+        font-size: 1.4rem;
+        line-height: 1;
+    }
+}
+
+/* --- Text COLORS --- */
+.text-color {
+    &-default {
+        color: $textColor !important;
+    }
+
+    &-primary {
+        color: $primaryColor !important;
+    }
+
+    &-secondary {
+        color: $secondaryColor !important;
+    }
+
+    &-danger {
+        color: $errorColor !important;
+    }
+
+    &-warning {
+        color: $warningColor !important;
+    }
+
+    &-info {
+        color: $secondaryColor !important;
+    }
+
+    &-success {
+        color: $successColor !important;
+    }
+
+    &-gold {
+        color: $gold !important;
+    }
+
+    &-white {
+        color: #ffffff !important;
+    }
+
+    &-black {
+        color: #000000 !important;
+    }
+
+    &-grey {
+        color: $grey !important;
+
+        &-light {
+            color: $lightGrey !important;
+        }
+    }
+
+    &-muted {
+        color: lighten($color: $grey, $amount:2);
+
+        figure {
+            @extend .svg-color-muted;
+        }
+    }
+
+    &-side-nav {
+        color: $sideNavTextColor !important;
+    }
+
+    &-toolbar {
+        color: $toolbarTextColor !important;
+    }
+}
+
+/* --- SVG COLORS --- */
+.svg-color {
+    &-neutral {
+        @include svgColor(inherit);
+    }
+
+    &-white {
+        @include svgColor(#fff);
+    }
+
+    &-black {
+        @include svgColor($textColor);
+    }
+
+    &-primary {
+        @include svgColor($primaryColor);
+    }
+
+    &-secondary {
+        @include svgColor($secondaryColor);
+    }
+
+    &-success {
+        @include svgColor($successColor);
+    }
+
+    &-danger {
+        @include svgColor($errorColor);
+    }
+
+    &-gold {
+        @include svgColor($gold);
+    }
+
+    &-grey {
+        @include svgColor($grey);
+    }
+
+    &-muted {
+        @include svgColor(lighten($color: $grey, $amount:2));
+    }
+
+    &-side-nav-icon {
+        @include svgColor($sideNavIconColor)
+    }
+
+    &-toolbar-icon {
+        @include svgColor($toolbarIconColor);
+    }
+}
+
+/* --- SVG Size --- */
+.svg-size {
+    &-flexible {
+        svg {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+
+    &-fill {
+        svg {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+
+    &-large {
+        svg {
+            width: 8rem !important;
+            height: auto !important;
+        }
+    }
+
+    &-medium {
+        svg {
+            width: 6rem !important;
+            height: auto !important;
+        }
+    }
+
+    &-small {
+        svg {
+            width: 1.8rem !important;
+            height: 1.8rem !important;
+        }
+    }
+
+    &-xs {
+        svg {
+            width: 1.2rem !important;
+            height: 1.2rem !important;
+        }
+    }
+
+    &-compact {
+        svg {
+            width: 8rem !important;
+            height: 5rem !important;
+        }
+    }
+}
+
+.svg-opacity-1 {
+    svg {
+        opacity: 1;
+    }
+}

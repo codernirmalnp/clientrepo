@@ -1,0 +1,151 @@
+.filepicker.dropzone {
+  width: 100%;
+  min-height: initial;
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  .dz-message {
+    min-height: 20.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 3rem;
+    border: 1px dashed rgba($color: $primaryColor, $alpha: 0.25);
+    border-radius: 10px;
+    background-color: rgba($color: $primaryColor, $alpha: 0.1);
+    color: #C4C4C4;
+    font-size: 1.6rem;
+
+    svg {
+      width: 5rem;
+      height: auto;
+      margin-bottom: 2.2rem
+    }
+
+    @include svgColor($primaryColor);
+
+    .btn-default {
+      margin-top: 2.2rem;
+    }
+  }
+
+  .dz-details {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-top: 4rem;
+    padding: 0 2rem;
+
+    figure {
+      width: 4rem;
+      height: 4rem;
+      flex-shrink: 0;
+      margin-right: 3rem;
+      border-radius: 3px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+        &:not([src]) {
+          display: none;
+
+          +svg {
+            display: block;
+          }
+        }
+      }
+
+      svg {
+        width: 3.8rem;
+        height: 3.8rem;
+        display: none
+      }
+
+      @include svgColor($primaryColor);
+    }
+
+    h6 {
+      @include multiLineEllipsis(1);
+
+      max-width: 70%;
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 400;
+
+    }
+
+    .file-size {
+      margin-left: auto;
+      font-size: 1.6rem;
+      font-weight: 400;
+
+      strong {
+        font-weight: 400;
+      }
+    }
+
+    .dz-progress {
+      width: 100%;
+      margin-top: 1.3rem;
+      background-color: lighten($color: $primaryColor, $amount: 35);
+      border-radius: 30px;
+
+      .dz-upload {
+        height: 5px;
+        display: block;
+        background-color: $primaryColor;
+        border-radius: 30px;
+      }
+    }
+
+    .dz-error-message {
+      position: absolute;
+      bottom: -1.8rem;
+      left: 9rem;
+      color: $errorColor;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    .remove {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-self: flex-end;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-left: 2rem;
+      border-radius: 50%;
+      background-color: #9F9F9F;
+      cursor: pointer;
+
+      * {
+        cursor: pointer;
+      }
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+}
+
+.popover-dropzone {
+  .MuiPopover-paper {
+    max-width: 100%;
+    width: 65rem;
+    padding: 2rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba($color: #000000, $alpha: 0.16);
+    background-color: #ffffff;
+  }
+}

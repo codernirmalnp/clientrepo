@@ -1,0 +1,28 @@
+.kebab-dropdown {
+    .MuiPopover-paper {
+        min-width: 13rem;
+        border: 1px solid #E0E0E0;
+        border-radius: 4px;
+        box-shadow: 0 3px 10px rgba($color: #000000, $alpha: 0.16);
+        background-color: #ffffff;
+
+
+        .MuiMenuItem-root {
+            padding: 1rem 2rem;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba($color: #707070, $alpha: 0.1);
+            }
+
+            span {
+                display: flex;
+                align-items: center
+            }
+
+            &:hover {
+                background-color: $primaryColor;
+                color: lighten($color: $primaryColor, $amount: 35);
+            }
+        }
+    }
+}

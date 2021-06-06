@@ -1,0 +1,234 @@
+.auth-v1-wrap {
+    width: 100%;
+    height: 100%;
+    padding: 12vh 0 0;
+
+    @include media-breakpoint-down('md') {
+        padding: 6vh 0 0;
+    }
+
+    &.auth-v1-style {
+        position: relative;
+        background-color: #ffffff;
+        z-index: 1;
+        overflow: hidden;
+
+        .grpahics {
+            .graphic-top {
+                width: 184vh;
+                height: 136vh;
+                position: absolute;
+                top: -54vh;
+                left: -42vh;
+                z-index: -1;
+
+                img,
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .graphic-bottom-left {
+                width: 14.6rem;
+                height: 14.6rem;
+                position: absolute;
+                bottom: 0;
+                left: 8%;
+                border-radius: 20px;
+                background-color: #EDEDED;
+                z-index: -1;
+
+                &:before {
+                    width: 10.6rem;
+                    height: 10.6rem;
+                    content: "";
+                    position: absolute;
+                    top: -35%;
+                    right: -20%;
+                    border-radius: 20px;
+                    background-color: $primaryColor;
+                }
+            }
+
+            .graphic-bottom-right {
+                width: 80rem;
+                height: 50rem;
+                position: absolute;
+                bottom: -33%;
+                right: -12%;
+                border-radius: 90px;
+                background-color: #EDEDED;
+                z-index: -1;
+                transform: rotate(30deg);
+            }
+        }
+    }
+}
+
+.auth-v1-message-box {
+    color: #fff;
+
+    img {
+        width: 22rem;
+
+        @include media-breakpoint-up('xs') {
+            margin-bottom: 6rem;
+        }
+    }
+
+    * {
+        &:not(img) {
+            opacity: 0;
+            animation-name: fadeInFromTop;
+            animation-duration: 600ms;
+            animation-delay: 100ms;
+            animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+            animation-fill-mode: forwards;
+        }
+    }
+
+    .title {
+        &.MuiTypography-root {
+            font-size: 4.8rem;
+        }
+    }
+
+    h3 {
+        animation-duration: 400ms;
+
+        &.MuiTypography-root {
+            line-height: 1.5;
+        }
+    }
+}
+
+.auth-v1-card {
+    max-width: 100%;
+    width: 476px;
+    position: relative;
+    margin: auto;
+    margin-right: 3rem;
+    padding: 2.5rem 2.8rem;
+    border: 1px solid #E8E8E8;
+    border-radius: 10px;
+    box-shadow: 0 3px 20px rgba($color: #000000, $alpha: 0.16);
+    color: $textColor;
+    overflow: visible;
+
+    @include media-breakpoint-up('xs') {
+        padding: 8rem 5rem 12rem;
+    }
+
+    &.MuiPaper-root {
+        @extend .auth-v1-card;
+    }
+
+    >* {
+        opacity: 0;
+        animation-name: fadeInFromBottom;
+        animation-duration: 600ms;
+        animation-delay: 100ms;
+        animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+        animation-fill-mode: forwards;
+    }
+
+    .btn-back {
+        align-self: flex-start;
+        margin: 4rem 0 -2rem;
+        color: $primaryColor;
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-transform: none;
+
+        &.MuiButtonBase-root {
+            @extend .btn-back;
+        }
+    }
+
+    &__head {
+        position: relative;
+        margin-bottom: 2rem;
+        font-size: 3rem;
+        font-weight: 500;
+        animation-duration: 400ms;
+
+        @include media-breakpoint-up('xs') {
+            margin-bottom: 5rem;
+        }
+
+        &.MuiTypography-root {
+            @extend .auth-v1-card__head;
+        }
+    }
+
+    .btn-default {
+        margin: 5rem 0 0;
+        padding: 1.1rem 2rem;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba($color: $primaryColor, $alpha: 0.5);
+
+        &.MuiButtonBase-root.MuiButton-contained.MuiButton-containedPrimary {
+            @extend .btn-default;
+        }
+    }
+}
+
+.password-requirement {
+    padding: 0;
+    list-style: none;
+
+    li {
+        padding-left: 2rem;
+        color: $textColor;
+        font-size: 1.5rem;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.otp-ui-v1 {
+    >div {
+        margin: 0 -0.8rem;
+    }
+
+    &__field {
+        width: calc(100% / 6);
+        height: 5rem;
+        padding: 0 0.8rem;
+
+        input {
+            width: 100% !important;
+            height: 100%;
+            border: 1px solid #B7B7B7;
+            border-radius: 5px;
+            font-size: 2.6rem;
+        }
+    }
+}
+
+@keyframes fadeInFromBottom {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromTop {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

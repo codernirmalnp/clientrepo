@@ -1,0 +1,154 @@
+.recent-activity {
+    $spacing: 2rem;
+    $spacing-sm: 1rem;
+    $timelineWidth: 15rem;
+    $timelineWidthSmall: 11rem;
+
+    position: relative;
+    margin: 0 -3rem -3rem;
+    padding: 0 3rem 0 0;
+    z-index: 1;
+
+    &:before {
+        width: $timelineWidth;
+        height: calc(100% - 5.5rem);
+        content: "";
+        position: absolute;
+        top: 5.5rem;
+        left: 0;
+        background-color: lighten($color: $primaryColor, $amount: 32);
+        z-index: -1;
+
+        @include media-breakpoint-down('xs') {
+            width: $timelineWidthSmall;
+        }
+    }
+
+    &__title {
+        width: auto;
+        align-self: flex-start;
+        margin: 0 0 2.4rem calc(3.2rem + #{$timelineWidth});
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        background-color: rgba($color: #638DBF, $alpha: 0.5);
+        color: #ffffff;
+        font-size: 1.4rem;
+
+        @include media-breakpoint-down('xs') {
+            margin: 0 0 2.4rem calc(3.2rem + #{ $timelineWidthSmall});
+        }
+
+        &.today {
+            background-color: lighten($color: $primaryColor, $amount: 32);
+            color: $primaryColor;
+        }
+
+        &.MuiTypography-root {
+            @extend .recent-activity__title;
+        }
+
+        +.MuiTimelineItem-root {
+            .MuiTimelineSeparator-root {
+                padding-top: $spacing;
+
+                @include media-breakpoint-down('xs') {
+                    padding-top: $spacing-sm;
+                }
+            }
+        }
+    }
+
+    &__time {
+        font-weight: 400;
+    }
+
+    &.MuiTimeline-root {
+        @extend .recent-activity;
+    }
+
+    .MuiTimelineItem-root {
+        +.recent-activity__title {
+            margin-top: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .MuiTimelineOppositeContent-root {
+            min-width: $timelineWidth;
+            width: auto;
+            flex: 0;
+            padding: $spacing;
+            color: #9F9F9F;
+            text-align: center;
+
+            @include media-breakpoint-down('xs') {
+                min-width: $timelineWidthSmall;
+                padding: $spacing-sm;
+            }
+        }
+
+        .MuiTimelineSeparator-root {
+            position: relative;
+            margin-left: -1px;
+
+            .MuiTimelineDot-root {
+                position: absolute;
+                top: $spacing;
+                left: 50%;
+                margin: 0;
+                border-color: #9e9e9e;
+                background-color: #fff;
+                transform: translateX(-50%);
+
+                @include media-breakpoint-down('xs') {
+                    top: $spacing-sm;
+                }
+            }
+
+            .MuiTimelineConnector-root {
+                background-color: #bfbfbf;
+            }
+        }
+
+        .MuiTimelineContent-root {
+            padding: $spacing 3.2rem;
+            border-bottom: 1px solid rgba($color: #707070, $alpha: 0.11);
+
+            @include media-breakpoint-down('xs') {
+                padding: $spacing-sm 3.2rem;
+
+                .MuiTypography-h4 {
+                    font-size: 1.6rem;
+                }
+
+                p {
+                    display: none;
+                }
+            }
+        }
+
+        .activity-state {
+            color: #9F9F9F;
+        }
+
+        &.today {
+            .MuiTimelineOppositeContent-root {
+                color: $primaryColor;
+            }
+
+            .MuiTimelineSeparator-root {
+
+                .MuiTimelineDot-root {
+                    border-color: $primaryColor;
+                }
+
+                .MuiTimelineConnector-root {
+                    background-color: $primaryColor;
+                }
+            }
+
+            .activity-state {
+                color: $primaryColor;
+            }
+        }
+    }
+}

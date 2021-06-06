@@ -1,0 +1,23 @@
+.default-card {
+    padding: map-get($map: $cardPadding, $key: 'xs');
+    border: 1px solid #F0EFEF;
+    border-radius: 6px;
+    box-shadow: $cardShadow;
+
+    @include media-breakpoint-up('xs') {
+        padding: map-get($map: $cardPadding, $key: 'lg');
+    }
+
+    &.MuiCard-root,
+    &.MuiPaper-root {
+        @extend .default-card;
+    }
+
+    &.spacing-xs {
+        padding: map-get($map: $cardPadding, $key: 'xs');
+    }
+
+    &.spacing-md {
+        padding: map-get($map: $cardPadding, $key: 'md');
+    }
+}

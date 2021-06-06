@@ -1,0 +1,26 @@
+@mixin multiLineEllipsis($line) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+@mixin svgColor($color) {
+    svg {
+        fill: $color;
+
+        * {
+            &:not([stroke-width]) {
+                &:not([fill="none"]) {
+                    fill: $color;
+                }
+            }
+
+            &[stroke-width] {
+                stroke: $color;
+            }
+        }
+    }
+}

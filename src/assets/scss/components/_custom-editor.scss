@@ -1,0 +1,44 @@
+
+.tox.tox-tinymce {
+    border: none;
+
+    .tox-editor-header {
+
+        .tox-toolbar__primary,
+        .tox-toolbar__overflow {
+            border-bottom: 1px solid #c8c8ca;
+            background: $inputBg;
+        }
+
+        .tox-toolbar__group {
+            padding: 3px 5px;
+        }
+
+        .tox-tbtn {
+            height: 25px;
+            margin: 0;
+        }
+    }
+
+    .tox-sidebar-wrap {
+        .tox-edit-area {
+            .tox-edit-area__iframe {
+                background-color: $inputBg;
+            }
+        }
+    }
+}
+
+.default-tinymce-light {
+    .tox {
+        &.tox-tinymce {
+            border: 1px solid $inputBorderColor;
+
+            .tox-editor-header .tox-toolbar__primary,
+            .tox-editor-header .tox-toolbar__overflow,
+            .tox-sidebar-wrap .tox-edit-area .tox-edit-area__iframe {
+                background-color: #ffffff;
+            }
+        }
+    }
+}

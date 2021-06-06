@@ -1,0 +1,134 @@
+$cardTop:20rem;
+.auth-v3-wrap{
+    width: 100%;
+    height:100%;
+    overflow: auto;
+    &.auth-v3-style{
+        position: relative;
+        background-color: #ffffff;
+        z-index:1;
+        overflow: hidden;
+    }
+}
+
+
+
+
+.auth_v3_card{    
+     height:100%;
+     width:100%; 
+     display: flex;
+     justify-content: center;
+    &__head{
+    width: 290px;
+    height: 115px;
+    margin-top:90px;             
+    }
+     &.MuiPaper-root{
+                     background-color:#B5A47E
+                  }
+      }            
+
+    .auth_v3_container{
+        &.MuiContainer-root{
+                padding:0;  
+            }    
+        }
+       
+
+ .right{
+        &__helperText{
+               position: absolute;
+               top:5rem;
+               right:2rem;
+               width: 30rem;
+               margin-bottom: 2rem;
+              &__trouble{
+                 width: 136px;
+                 height: 23px;
+                 text-align: center;
+                 font: normal normal normal 20px/23px Aeonik Pro;
+                 color: #B1B2B6;
+                 opacity: 0.5;
+             
+              }
+            &__helpinghand{
+                width: 120px;
+                height: 23px;
+                color: #B5A47E;
+                opacity: 1;
+                text-align: center;
+                font: normal normal normal 20px/23px Aeonik Pro;
+                cursor: pointer;
+                }
+         }
+
+    }
+   
+
+    .wrapper{
+        height: 100%;  
+        width: 100%;
+        display: flex; 
+        flex-direction: column;  
+        gap:3rem;  
+        margin-top: 12rem;
+        margin-left: 20px;
+        &__type{
+            color: #636365;
+            opacity: 1;
+            text-align: left;
+            &.MuiTypography-root{
+                font:  normal normal 300 45px/51px Aeonik Pro;
+            }
+            @include media-breakpoint-down('md'){
+                &.MuiTypography-root{
+                    font:  normal normal 300 30px/30px Aeonik Pro;
+                }
+            }
+        }
+        &__type__details{
+                 width: 552px;
+                 height: 61px;
+                 text-align: left;
+                 letter-spacing: 0px;
+                 opacity: 1;
+                    &.MuiTypography-root{
+                        font: normal normal normal 20px/30px Aeonik Pro;
+                        color: #7F7F7F;
+                    }
+        }
+    }
+    .card{
+        margin-top: 48px;
+        &_item{
+            width: 180px;
+            height: 130px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid #705F42;
+        
+            @include media-breakpoint-down('md'){
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+
+   
+
+ 
+
+
+
+ 
+
+        
+
+
+
+
+

@@ -1,0 +1,22 @@
+<svg id="_5_Checkbox_1_Checked_1_Default" data-name=" 5) Checkbox/1) Checked/1) Default" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21" viewBox="0 0 21 21">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="_Icon_Color" data-name="🎨 Icon Color" d="M6.039.429A1.111,1.111,0,0,1,7.556.2,1.025,1.025,0,0,1,7.79,1.668L4.431,6.1a1,1,0,0,1-1.493.115L.317,3.677a1.023,1.023,0,0,1,0-1.483,1.113,1.113,0,0,1,1.535,0L3.5,3.785Z" transform="translate(0 1)" fill="#b1a587"/>
+    </clipPath>
+  </defs>
+  <g id="Icon" transform="translate(6 10.928)">
+    <rect id="_5_Checkbox_5_Icon_Setup_Checkmark_background" data-name=" 5) Checkbox/5) Icon [Setup]/Checkmark background" width="8" height="8" fill="none"/>
+    <g id="Group_34" data-name="Group 34">
+      <path id="_Icon_Color-3" data-name="🎨 Icon Color" d="M6.039.429A1.111,1.111,0,0,1,7.556.2,1.025,1.025,0,0,1,7.79,1.668L4.431,6.1a1,1,0,0,1-1.493.115L.317,3.677a1.023,1.023,0,0,1,0-1.483,1.113,1.113,0,0,1,1.535,0L3.5,3.785Z" transform="translate(0 1)" fill="#b1a587"/>
+    </g>
+  </g>
+  <g id="Group_1850" data-name="Group 1850" transform="translate(0 -20.072)">
+    <circle id="Ellipse_284" data-name="Ellipse 284" cx="10.5" cy="10.5" r="10.5" transform="translate(0 20.072)" fill="#fff"/>
+    <g id="Icon-2" data-name="Icon" transform="translate(7 27.072)">
+      <rect id="_5_Checkbox_5_Icon_Setup_Checkmark_background-2" data-name=" 5) Checkbox/5) Icon [Setup]/Checkmark background" width="8" height="8" fill="none"/>
+      <g id="Group_34-2" data-name="Group 34">
+        <path id="_Icon_Color-4" data-name="🎨 Icon Color" d="M6.039.429A1.111,1.111,0,0,1,7.556.2,1.025,1.025,0,0,1,7.79,1.668L4.431,6.1a1,1,0,0,1-1.493.115L.317,3.677a1.023,1.023,0,0,1,0-1.483,1.113,1.113,0,0,1,1.535,0L3.5,3.785Z" transform="translate(0 1)" fill="#b1a587"/>
+      </g>
+    </g>
+  </g>
+</svg>

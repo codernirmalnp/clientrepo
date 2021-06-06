@@ -1,0 +1,321 @@
+
+$calendarGrey: #F5F6FA;
+$borderColor:#EAF0F4;
+
+.custom-fullcalendar {
+    padding: 2rem;
+
+    .fc-header-toolbar {
+        @include media-breakpoint-down('sm') {
+            flex-direction: column;
+
+            .fc-toolbar-chunk {
+                width: 100%;
+                margin: 0 0 2rem;
+                text-align: center;
+            }
+        }
+
+        .fc-button-group {
+            @include media-breakpoint-down('sm') {
+                width: 100%;
+            }
+
+            .fc-prev-button,
+            .fc-next-button,
+            .fc-today-button {
+                border-color: #D7DAE2;
+                border-radius: 4px;
+                background-color: transparent;
+                outline: none;
+                text-transform: capitalize;
+
+                .fc-icon {
+                    color: #8898AA;
+                }
+
+                &:hover,
+                &:focus {
+                    box-shadow: none;
+                    outline: none;
+                }
+            }
+
+            .fc-prev-button {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            .fc-next-button {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            .fc-today-button {
+                margin-left: 2rem;
+                border-radius: 4px;
+                color: $textColor;
+
+                &:not(:disabled) {
+                    border-color: $textColor;
+                }
+            }
+
+            .fc-dayGridMonth-button,
+            .fc-timeGridWeek-button,
+            .fc-timeGridDay-button,
+            .fc-listWeek-button {
+                margin-left: 1.6rem;
+                padding: 0.8rem 1.6rem;
+                border: none;
+                border-radius: 4px;
+                background-color: #F7FAFC;
+                color: $textColor;
+                text-transform: capitalize;
+
+                &.fc-button-active {
+                    background-color: $primaryColor;
+                    color: #ffffff;
+                }
+
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .fc-toolbar-title {
+            font-weight: 600;
+        }
+    }
+
+    .fc-view {
+        table {
+            border-color: $borderColor;
+
+            .fc-col-header-cell,
+            th {
+                padding: 1.2rem;
+                border-color: $borderColor;
+                background-color: $calendarGrey;
+
+                .fc-col-header-cell-cushion {
+                    color: #A3A6B4;
+                    font-weight: 600;
+                }
+            }
+
+            .fc-daygrid-day {
+                border-color: $borderColor;
+
+                .fc-daygrid-day-frame {
+                    padding: 3px;
+
+                    @include media-breakpoint-up('sm') {
+                        padding: 1.2rem;
+                    }
+                }
+
+                &.fc-day-today {
+                    background-color: #e4f0ff;
+                }
+
+                &.fc-day-disabled {
+                    background-color: #ffffff;
+                }
+            }
+        }
+
+        colgroup {
+            col {
+                width: 60px !important;
+            }
+        }
+
+        .fc-scrollgrid-section {
+            .fc-scrollgrid-shrink {
+                padding: 0.5rem;
+                border-color: $borderColor;
+                background-color: $calendarGrey;
+                color: #A3A6B4;
+                font-weight: 600;
+            }
+
+            .fc-timegrid-slot {
+                height: 2rem;
+                border-color: $borderColor;
+            }
+        }
+
+        .fc-timegrid-col {
+            border-color: $borderColor;
+        }
+    }
+
+    .fc-daygrid-event {
+        border-radius: 4px;
+
+        &.fc-event {
+            max-width: 100%;
+            display: block;
+            align-items: center;
+            padding: 0.3rem 0.6rem;
+            background-color: lighten($color: $secondaryColor, $amount: 5);
+            color: #ffffff;
+            font-size: 1.4rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            cursor: pointer;
+
+            .fc-event-main {
+                @extend .fc-event;
+
+                svg {
+                    * {
+                        fill: #ffffff;
+                    }
+                }
+
+                .MuiIconButton-root {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 1;
+                    background-color: #4188d8;
+                }
+            }
+        }
+    }
+}
+
+.event-people-list {
+    padding: 0;
+
+    &.slide {
+        .slick-track {
+            display: flex;
+
+            .slick-slide {
+                height: auto;
+                position: relative;
+
+                &:before,
+                &:after {
+                    content: "";
+                    position: absolute;
+                    z-index: 1;
+                }
+
+                &:before {
+                    width: 0;
+                    height: 1px;
+                    display: none;
+                    top: 50%;
+                    left: 0;
+                    background: linear-gradient(to right, rgba(25, 50, 127, 0) 0%, #bfbfbf 50%, rgba(25, 50, 127, 0) 100%);
+                    transform: translateY(-50%);
+                }
+
+                &:after {
+                    width: 1px;
+                    height: 0;
+                    top: 0;
+                    left: 50%;
+                    background: linear-gradient(to bottom, rgba(25, 50, 127, 0.0) 0%, #bfbfbf 50%, rgba(25, 50, 127, 0.0) 100%);
+                    transform: translateX(-50%);
+                }
+
+                .MuiListItem-root {
+                    display: inline-flex !important;
+                    padding: 1.5rem 0;
+
+                    .float {
+                        position: absolute;
+                        top: 50%;
+                        right: 1rem;
+                        opacity: 0.08;
+                        transform: translateY(-50%);
+
+                        svg {
+                            width: 3.8rem;
+                            height: 3.8rem;
+                        }
+                    }
+                }
+
+                >div {
+                    .MuiListItem-root {
+                        &:first-child {
+                            padding-right: 1.5rem;
+                        }
+                        &:last-child {
+                            padding-left: 1.5rem;
+                        }
+                    }
+                }
+
+                &.slick-current {
+                    &:before {
+                        width: 100%;
+                        transition: 400ms cubic-bezier(0.85, 0, 0.15, 1) 500ms;
+                    }
+
+                    &:after {
+                        height: 100%;
+                        transition: 400ms cubic-bezier(0.85, 0, 0.15, 1) 500ms;
+                    }
+                }
+            }
+        }
+
+        .slick-arrow {
+            width: 16px;
+            height: 21px;
+            opacity: 1;
+            z-index: 1;
+
+            &:before {
+                color: #000000;
+                font-size: 5rem;
+                opacity: 1;
+                line-height: 0;
+            }
+
+            &.slick-prev {
+                left: 0;
+
+                &:before {
+                    content: "‹";
+                }
+            }
+
+            &.slick-next {
+                right: 0;
+
+                &:before {
+                    content: '›';
+                }
+            }
+        }
+
+        &.multi-row {
+            .slick-track {
+                min-height: 138px;
+
+                .slick-slide {
+                    &:before {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .MuiListItem-root {
+        .MuiListItemText-root {
+            margin: 0;
+        }
+    }
+}

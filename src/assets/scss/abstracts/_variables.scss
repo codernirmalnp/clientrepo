@@ -1,0 +1,45 @@
+$primaryColor: #114172;
+$secondaryColor: #63BFB0;
+$errorColor: #B60F0F;
+$warningColor: #FFA85D;
+$successColor: #18C35A;
+
+$lightRed: #B60F0F;
+
+$gold: #FFA85D;
+$grey: #A0ADBB;
+$lightGrey:#c5c5c5;
+
+$bodyBg:#E8E8E8;
+$textColor: #555454;
+
+$whiteBg: #f8f8f8;
+
+$inputPadding: 1.4rem 2rem;
+$inputBorderColor:#B7B7B7;
+$inputBg:#F3F3F3;
+
+$toolbarHeight: 7.8rem;
+$mobileToolbarHeight: 5.5rem;
+$toolbarSearchBackground:rgba($color: #e8e8e8, $alpha: 0.3);
+$toolbarBackground: var(--toolbar-bg);
+$toolbarTextColor: var(--toolbar-text-color);
+$toolbarIconColor: var(--toolbar-icon-color);
+
+$sideNavWidth: 290px;
+$sideNaveCollapseWidth: 78px;
+$sideNavBackground: var(--side-nav-bg);
+$sideNavTextColor: var(--side-nav-text-color);
+$sideNavIconColor:var(--side-nav-icon-color);
+$sideNavActiveColor:var(--side-nav-active-color);
+$sideNavSubMenuBgColor:var(--side-nav-hover-submenu-color);
+
+$bredcrumbHeight: 10.6rem;
+$mobileBredcrumbHeight:8.6rem;
+
+
+// Card Styles
+$cardPadding: ('xs':2rem,
+    'md': 2.5rem 3rem,
+    'lg': 5.5rem);
+$cardShadow:0 3px 12px rgba(0, 0, 0, 0.04);

@@ -1,0 +1,198 @@
+.user-profile {
+    $spacing: 4rem;
+
+    position: sticky;
+    top: calc(#{$toolbarHeight} + 1rem);
+    padding: $spacing;
+    box-shadow: $cardShadow;
+    border-radius: 10px;
+
+    &.MuiPaper-root {
+        @extend .user-profile;
+    }
+
+    .btn-kebab {
+        position: absolute;
+        top: $spacing;
+        right: calc(#{$spacing} * 0.5);
+    }
+
+    &__img {
+        width: 123px;
+        height: 123px;
+        position: relative;
+        margin-bottom: 2rem;
+
+        .MuiIconButton-root {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: $primaryColor;
+
+            @include svgColor(#fff);
+
+            &:hover {
+                background-color: darken($color: $primaryColor, $amount: 10);
+            }
+        }
+
+        .MuiAvatar-root {
+            width: 123px;
+            height: 123px;
+            font-size: 6rem;
+            background-color: #DDDDDD;
+            color: #9f9f9f;
+        }
+    }
+
+    .profile-field {
+        margin: 0 #{-$spacing};
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            padding: 0 $spacing;
+            color: #A2A5A7;
+
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 2.4rem;
+            }
+
+            @include svgColor($primaryColor);
+        }
+
+        .MuiFormControl-root {
+            width: 100%;
+
+            .MuiInputBase-root {
+                &.MuiFilledInput-root {
+                    padding: 1.8rem calc(#{$spacing} + 2.4rem + 1.5rem);
+                    background-color: #FAFAFA;
+
+                    @include media-breakpoint-down('xs') {
+                        padding: 1.8rem calc(2.4rem + 1.5rem);
+                    }
+
+                    &:before {
+                        border-color: #DEDEDE;
+                    }
+                }
+
+                input {
+                    height: auto;
+                    padding: 0;
+                }
+
+                &.Mui-disabled {
+                    &.MuiFilledInput-root {
+                        padding: 0.2rem calc(#{$spacing} + 2.4rem + 1.5rem);
+                        background-color: transparent;
+
+                        &:before {
+                            width: 0;
+                        }
+                    }
+
+                    input {
+                        color: $textColor;
+                    }
+                }
+
+                .MuiInputAdornment-root {
+                    margin-top: 0;
+                }
+
+                .MuiAutocomplete-endAdornment {
+                    right: calc(4rem + 1.5rem);
+                }
+            }
+        }
+
+        &.name {
+            position: relative;
+            margin-bottom: 6rem;
+
+            &:before,
+            &:after {
+                height: 1px;
+                content: "";
+                position: absolute;
+                bottom: -3rem;
+                left: $spacing;
+            }
+
+            &:before {
+                width: 88px;
+                background-color: #DEDEDE;
+            }
+
+            &:after {
+                width: 28px;
+                background-color: $primaryColor;
+            }
+
+            .MuiFormControl-root {
+
+                .MuiInputBase-root {
+                    &.MuiFilledInput-root {
+                        padding: 1.8rem $spacing;
+                    }
+
+                    input {
+                        font-size: 2.5rem;
+                        font-weight: 600;
+                    }
+
+                    &:not(.Mui-disabled) {
+                        margin: 0 0 1.5rem;
+                    }
+                }
+            }
+
+            .MuiTypography-h5 {
+                padding-left: $spacing;
+            }
+
+            .name-text {
+                font-size: 2.5rem;
+            }
+        }
+
+        &.no-bg {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+
+            .MuiFormControl-root {
+
+                .MuiInputBase-root {
+                    &.MuiFilledInput-root {
+                        margin: 0 calc(#{$spacing} + 2.4rem + 1.5rem);
+                        padding: 0.5rem 0 1.8rem;
+                        background-color: transparent;
+
+                        @include media-breakpoint-down('xs') {
+                            margin: 0 calc(2.4rem + 1.5rem);
+                        }
+                    }
+                }
+
+                .MuiFormHelperText-root {
+                    margin: 0 0 0 calc(#{$spacing} + 2.4rem + 1.5rem);
+
+                    @include media-breakpoint-down('xs') {
+                        margin: 0 0 0 calc(2.4rem + 1.5rem);
+                    }
+                }
+            }
+        }
+    }
+
+}

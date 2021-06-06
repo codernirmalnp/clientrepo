@@ -1,0 +1,246 @@
+.animated {
+    width: 190px;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 1;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        z-index: -1;
+    }
+
+    &:before {
+        width: 190px;
+        height: 190px;
+        animation: scaleCheckBg2 .4s .9s ease-in-out forwards;
+    }
+
+    &:after {
+        width: 158px;
+        height: 158px;
+        animation: scaleCheckBg1 .4s 1.2s ease-in-out forwards;
+    }
+
+    svg {
+        width: 113px;
+        height: 113px;
+
+        .path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 0;
+
+            &.circle {
+                stroke-dasharray: 345;
+                stroke-linecap: round;
+                animation: dash .6s ease-in-out;
+            }
+
+            &.check {
+                stroke-dashoffset: -100;
+                animation: dash-check .8s .6s ease-in-out forwards;
+            }
+
+            &.line {
+                stroke-dashoffset: 1000;
+                animation: line .8s .6s ease-in-out forwards;
+            }
+        }
+    }
+
+    .fly {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        opacity: 0;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        &-top {
+            &-left {
+                @extend .fly;
+
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation: flyTopLeft .6s .9s ease-in-out forwards;
+            }
+
+            &-right {
+                @extend .fly;
+
+                width: 28px;
+                height: 28px;
+                top: 50%;
+                right: calc(50% + -10px);
+                animation: flyTopRight .6s .9s ease-in-out forwards;
+            }
+        }
+
+        &-bot {
+            &-right {
+                @extend .fly;
+
+                position: absolute;
+                top: auto;
+                left: auto;
+                bottom: calc(50% + -10px);
+                right: calc(50% + -10px);
+                transform: translate(0);
+                border: 3px solid $successColor;
+                border-radius: 50%;
+                animation: flyBottomRight .6s .9s ease-in-out forwards;
+            }
+        }
+    }
+
+    &-check {
+        @extend .animated;
+
+        &:before {
+            background-color: rgba($color: $successColor, $alpha: 0.25);
+        }
+
+        &:after {
+            background-color: rgba($color: $successColor, $alpha: 0.18);
+        }
+
+        @include svgColor($successColor);
+    }
+
+    &-close {
+        @extend .animated;
+
+        &:before {
+            background-color: rgba($color: $errorColor, $alpha: 0.25);
+        }
+
+        &:after {
+            background-color: rgba($color: $errorColor, $alpha: 0.18);
+        }
+
+        @include svgColor($errorColor);
+
+        .fly-bot-right {
+            border-color: $errorColor;
+        }
+    }
+
+    @keyframes line {
+        0% {
+            stroke-dashoffset: 1000;
+        }
+
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes dash {
+        0% {
+            stroke-dashoffset: 345;
+        }
+
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes dash-check {
+        0% {
+            stroke-dashoffset: -100;
+        }
+
+        100% {
+            stroke-dashoffset: 100;
+        }
+    }
+
+    @keyframes scaleCheckBg1 {
+        0% {
+            width: 113px;
+            height: 113px;
+            opacity: 1;
+        }
+
+        100% {
+            width: 158px;
+            height: 158px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes scaleCheckBg2 {
+        0% {
+            width: 113px;
+            height: 113px;
+            opacity: 1;
+        }
+
+        100% {
+            width: 190px;
+            height: 190px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes flyTopLeft {
+        0% {
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        100% {
+            top: 0;
+            left: 0;
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+
+    @keyframes flyTopRight {
+        0% {
+            top: 50%;
+            right: calc(50% + -10px);
+            opacity: 0;
+            transform: translateY(-50%);
+        }
+
+        100% {
+            top: 18px;
+            right: -15px;
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+
+    @keyframes flyBottomRight {
+        0% {
+            bottom: calc(50% + -10px);
+            right: calc(50% + -10px);
+            opacity: 0;
+        }
+
+        100% {
+            bottom: 0;
+            right: 0;
+            opacity: 1;
+        }
+    }
+}
